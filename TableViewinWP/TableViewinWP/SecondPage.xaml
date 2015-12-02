@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TableViewinWP.SecondPage"
+             xmlns:CustomControls="clr-namespace:TableViewinWP.CustomControls;assembly=TableViewinWP">
+  
+  
+  <Grid x:Name="LayoutRoot" RowSpacing="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <StackLayout VerticalOptions="Center" Orientation="Vertical" HorizontalOptions="Center" Grid.Row="1">
+      <TableView Intent="Form" x:Name="tblStepDetails">
+        <TableView.Root>
+          <TableRoot>
+            <TableSection Title="ADDRESS DETAILS" x:Name="sectionStepDetails">
+              <ViewCell>
+                <Grid HorizontalOptions="Start" Padding="10,0" x:Name="viewStreetName">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Label Text="Street " Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                  <CustomControls:BorderlessEntry Text="221 Baker Street"
+                                                  x:Name="txtStreetName" Grid.Row="0" Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+
+
+                  </CustomControls:BorderlessEntry>
+                </Grid>
+              </ViewCell>
+
+              <ViewCell>
+                <Grid HorizontalOptions="Start" Padding="10,0" x:Name="viewCityName">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Label Text="City " Grid.Column="0" VerticalOptions="Center"/>
+                  <CustomControls:BorderlessEntry Text="London"
+                                                  x:Name="txtCityName" Grid.Column="1" HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+
+                  </CustomControls:BorderlessEntry>
+                </Grid>
+              </ViewCell>
+
+              <ViewCell>
+                <Grid HorizontalOptions="Start" Padding="10,0" x:Name="viewPostcode">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                  </Grid.ColumnDefinitions>
+                  <Label Text="Postcode " Grid.Column="0" VerticalOptions="Center"/>
+                  <CustomControls:BorderlessEntry Text="LN1 2AH"
+                                                  x:Name="txtPostcode" Grid.Column="1" HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center">
+                  </CustomControls:BorderlessEntry>
+                </Grid>
+              </ViewCell>
+            </TableSection>
+            <TableSection Title="ADDITIONAL INFORMATION" x:Name="sectionAdditionalDetails">
+            </TableSection>
+          </TableRoot>
+        </TableView.Root>
+      </TableView>
+    </StackLayout>
+
+  </Grid>
+</ContentPage>
